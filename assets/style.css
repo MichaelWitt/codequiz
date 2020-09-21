@@ -21,6 +21,22 @@ margin: 10px;
 margin-left: 20px;
 }
 
+.quiz {
+color: black;
+font-family: 'EB Garamond', sans-serif;
+font-size: 30px;
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+
+.btn {
+font-family: 'EB Garamond', sans-serif;
+font-size: 30px;
+background-color: black;
+border: none;
+}
+
 .timer {
 color: black;
 font-family: 'EB Garamond', sans-serif;
