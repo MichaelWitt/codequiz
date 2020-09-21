@@ -26,6 +26,9 @@ You can see all of my updates and pushes in the refactory, which displays code c
 
 UNC Coding Bootcamp and Trilogy Education Services for the inspiration & code to create.
 
+Unsplash - The internet’s source of freely-usable images. 
+Olia Gozha, @olia - For the awesome background photo - Thanks! 
+
 ## License
 
 Licensed under the MIT license.
