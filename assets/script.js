@@ -22,7 +22,6 @@ function setTimer() {
             clearInterval(timerTotal);
             questionsEl.textContent = 'Game Over';
             quizEl.textContent = 'Thanks for playing! Try again :)';
-            startButton.textContent = startButton;
             // sendMessage();
         }
     }, 1000);
@@ -30,7 +29,7 @@ function setTimer() {
 
 
 
-startButton.addEventListener('click', setTimer());
+startButton.addEventListener('click', setTimer);
 
 
 
