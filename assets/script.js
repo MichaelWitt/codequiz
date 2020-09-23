@@ -21,11 +21,16 @@ function setTimer() {
         if (countdown === 0) {
             clearInterval(timerTotal);
             questionsEl.textContent = 'Game Over';
-            // quizEl.textContent = 'Thanks for playing! Enter intials to high score leaderboard:'
+            quizEl.textContent = 'Thanks for playing! Try again :)';
+            startButton.textContent = startButton;
             // sendMessage();
         }
     }, 1000);
 }
+
+
+
+startButton.addEventListener('click', setTimer());
 
 
 
@@ -39,7 +44,6 @@ function setTimer() {
 
 // }
 
-setTimer();
 
 // function gameOver() {
 //     timerEl.textContent = ' ';
