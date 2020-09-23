@@ -2,6 +2,8 @@
 
 var startButton = document.querySelector("#start");
 var timerEl = document.querySelector('.timer');
+var questionsEl = document.querySelector('.questions');
+var quizEl = document.querySelector('.quiz');
 var countdown = 100;
 
 // var allQuestions = [
@@ -18,10 +20,14 @@ function setTimer() {
 
         if (countdown === 0) {
             clearInterval(timerTotal);
+            questionsEl.textContent = 'Game Over';
+            // quizEl.textContent = 'Thanks for playing! Enter intials to high score leaderboard:'
             // sendMessage();
         }
     }, 1000);
 }
+
+
 
 // function sendMessage() {
 //     timeEl.textContent = " ";
