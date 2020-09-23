@@ -1,29 +1,104 @@
 // Code Quiz JS
 
-// var questionsEl = document.querySelector(".quiz");
-
+var startButton = document.querySelector("#start");
+var timerEl = document.querySelector('.timer');
+var countdown = 100;
 
 // var allQuestions = [
 
-
 // ]
-
 // var allAnswers = [
 
-
 // ]
 
+function setTimer() {
+    var timerTotal = setInterval(function () {
+        countdown--;
+        timerEl.textContent = countdown;
+
+        if (countdown === 0) {
+            clearInterval(timerTotal);
+            // sendMessage();
+        }
+    }, 1000);
+}
+
+// function sendMessage() {
+//     timeEl.textContent = " ";
+
+//     var imgEl = document.createElement("img");
+
+//     imgEl.setAttribute("src", "images/image_1.jpg");
+//     mainEl.appendChild(imgEl);
+
+// }
+
+setTimer();
+
+// function gameOver() {
+//     timerEl.textContent = ' ';
+
+// }
+
+// var timeEl = document.querySelector(".time");
+// var mainEl = document.getElementById("main");
+
+// var secondsLeft = 10;
+
+// function setTime() {
+//     var timerInterval = setInterval(function () {
+//         secondsLeft--;
+//         timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+
+//         if (secondsLeft === 0) {
+//             clearInterval(timerInterval);
+//             sendMessage();
+//         }
+
+//     }, 1000);
+// }
+
+// function sendMessage() {
+//     timeEl.textContent = " ";
+
+//     var imgEl = document.createElement("img");
+
+//     imgEl.setAttribute("src", "images/image_1.jpg");
+//     mainEl.appendChild(imgEl);
+
+// }
+
+
+
+/* <div class="question-display hide">
+    <h1 id="question-text">Question Text</h1>
+    <div class="answers">
+        <h3 id="a-0">Possible Answer 1</h3>
+        <h3 id="a-1">Possible Answer 1</h3>
+        <h3 id="a-2">Possible Answer 1</h3>
+        <h3 id="a-3">Possible Answer 1</h3>
+    </div>
+</div>
+
+
+var answerButtons = document.querySelector(".question-display")
+answerButtons.addEventListener("click", function (e) {
+    console.log(e.target)
+})
+
+
+    .textContent
+
+function startGame() {
+
+
+// } */
 
 
 
 
 
-
-
-
-// questionsEl.addEventListener("click", begin);
-
-
+// startButton.addEventListener("click", "start");
 
 
 
@@ -33,9 +108,13 @@
 
 // Tips:
 
+// Start with a 1 question game
+
+
+
 // // Password Generator JS
 
-// // Linking JS to HTML 
+// // Linking JS to HTML
 // var generateBtn = document.querySelector("#generate");
 
 // // Variables to generate password characters from
