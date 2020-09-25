@@ -35,7 +35,7 @@ Question inspiration from: https://www.guru99.com/javascript-interview-questions
 
 Licensed under the MIT license.
 
-https://michaelwitt.github.io/codequiz/assets/LICENSE.txt
+<!-- https://michaelwitt.github.io/codequiz/assets/LICENSE.txt -->
 
 ## Contributor Covenant Code of Conduct
 
