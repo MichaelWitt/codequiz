@@ -4,6 +4,7 @@ var startButton = document.querySelector("#start");
 var timerEl = document.querySelector('.timer');
 var questionsEl = document.querySelector('.questions');
 var quizEl = document.querySelector('.quiz');
+var questionDisplayEl = document.querySelector('.question-display');
 var countdown = 100;
 
 // var allQuestions = [
@@ -30,6 +31,7 @@ function setTimer() {
 function hideButton() {
     startButton.style.display = "none";
     quizEl.style.display = "none";
+    questionDisplayEl.style.display = "inline";
 }
 
 
