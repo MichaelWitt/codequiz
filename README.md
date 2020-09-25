@@ -29,6 +29,8 @@ UNC Coding Bootcamp and Trilogy Education Services for the inspiration & code to
 Unsplash - The internet’s source of freely-usable images. 
 Olia Gozha, @olia - For the awesome background photo - Thanks! 
 
+Question inspiration from: https://www.guru99.com/javascript-interview-questions-answers.html -Thanks!
+
 ## License
 
 Licensed under the MIT license.
