@@ -5,6 +5,8 @@ var timerEl = document.querySelector('.timer');
 var questionsEl = document.querySelector('.questions');
 var quizEl = document.querySelector('.quiz');
 var questionDisplayEl = document.querySelector('.question-display');
+var questionTextEl = document.querySelector('#question-text');
+var answersEl = document.querySelector('.answers');
 var countdown = 100;
 
 // var allQuestions = [
@@ -22,8 +24,8 @@ function setTimer() {
         if (countdown === 0) {
             clearInterval(timerTotal);
             questionsEl.textContent = 'Game Over';
-            quizEl.textContent = 'Thanks for playing! Try again :)';
-            // sendMessage();
+            questionTextEl.textContent = 'Thanks for playing! Try again :)';
+            answersEl.textContent = '';
         }
     }, 1000);
 }
