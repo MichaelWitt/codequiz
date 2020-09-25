@@ -27,81 +27,49 @@ function setTimer() {
     }, 1000);
 }
 
+function hideButton() {
+    startButton.style.display = "none";
+    quizEl.style.display = "none";
+}
+
+
+
+
+
+// var answerButtons = document.querySelector(".question-display")
+// answerButtons.addEventListener("click", function () {
+//     console.log(e.target)
+//     answerButtons.textContent = "Hello"
+// })
+
+
+
+
 
 
 startButton.addEventListener('click', setTimer);
+startButton.addEventListener('click', hideButton);
 
 
 
-// function sendMessage() {
-//     timeEl.textContent = " ";
-
-//     var imgEl = document.createElement("img");
-
-//     imgEl.setAttribute("src", "images/image_1.jpg");
-//     mainEl.appendChild(imgEl);
-
-// }
-
-
-// function gameOver() {
-//     timerEl.textContent = ' ';
-
-// }
-
-// var timeEl = document.querySelector(".time");
-// var mainEl = document.getElementById("main");
-
-// var secondsLeft = 10;
-
-// function setTime() {
-//     var timerInterval = setInterval(function () {
-//         secondsLeft--;
-//         timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-//         if (secondsLeft === 0) {
-//             clearInterval(timerInterval);
-//             sendMessage();
-//         }
-
-//     }, 1000);
-// }
-
-// function sendMessage() {
-//     timeEl.textContent = " ";
-
-//     var imgEl = document.createElement("img");
-
-//     imgEl.setAttribute("src", "images/image_1.jpg");
-//     mainEl.appendChild(imgEl);
-
-// }
 
 
 
-/* <div class="question-display hide">
-    <h1 id="question-text">Question Text</h1>
-    <div class="answers">
-        <h3 id="a-0">Possible Answer 1</h3>
-        <h3 id="a-1">Possible Answer 1</h3>
-        <h3 id="a-2">Possible Answer 1</h3>
-        <h3 id="a-3">Possible Answer 1</h3>
-    </div>
-</div>
 
 
-var answerButtons = document.querySelector(".question-display")
-answerButtons.addEventListener("click", function (e) {
-    console.log(e.target)
-})
 
 
-    .textContent
-
-function startGame() {
 
 
-// } */
+
+
+
+    // .textContent
+
+// function startGame() {
+
+
+// // } */
 
 
 
