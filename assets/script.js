@@ -50,13 +50,6 @@ function hideButton() {
 
 
 
-// var answerButtons = document.querySelector(".question-display")
-// answerButtons.addEventListener("click", function () {
-//     console.log(e.target)
-//     answerButtons.textContent = "Hello"
-// })
-
-
 
 
 
@@ -74,6 +67,11 @@ startButton.addEventListener('click', hideButton);
 
 
 
+// var answerButtons = document.querySelector(".question-display")
+// answerButtons.addEventListener("click", function () {
+//     console.log(e.target)
+//     answerButtons.textContent = "Hello"
+// })
 
 
 
@@ -85,7 +83,13 @@ startButton.addEventListener('click', hideButton);
 
 // // } */
 
+// var count = 0
+// var myArray = [“a”, “b”, “c”]
+// someButton.addEventListener(“click”, function () {
+//     console.log(“letter “, myArray[count])
 
+//     count++
+// }
 
 
 
