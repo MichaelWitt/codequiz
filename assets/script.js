@@ -8,6 +8,11 @@ var questionDisplayEl = document.querySelector('.question-display');
 var questionTextEl = document.querySelector('#question-text');
 var answersEl = document.querySelector('.answers');
 var countdown = 100;
+var score = 0;
+var answerOne = document.querySelector('#answer-1');
+var answerTwo = document.querySelector('#answer-2');
+var answerThree = document.querySelector('#answer-3');
+var answerFour = document.querySelector('#answer-4');
 
 var allQuestions = ['What is JavaScript?', 'What is not a JavaScript Data Type?', 'Which is not a looping structure in JavaScript?', 'Whats an undefined value in JavaScript?', 'What type of popup boxes are in JavaScript?', 'Is the data type of variables in Javascript object data types?', 'Does JavaScript have concept level scope?', 'What year did JavaScript make an appearance?', 'What are JavaScript cookies?']
 
@@ -46,7 +51,36 @@ function hideButton() {
     questionDisplayEl.style.display = "inline";
 }
 
+var randomQuestion, currentQuestion;
 
+function startGame() {
+    randomQuestion = allQuestions.sort(() => Math.random() - .5)
+    currentQuestion = 0;
+    nextQuestion()
+
+}
+
+function nextQuestion() {
+    showQuestion(randomQuestion[currentQuestion])
+}
+
+function showQuestion(allQuestions) {
+    questionTextEl.innerText = allQuestions;
+}
+
+function chooseAnswer() {
+
+}
+
+
+
+
+
+// function showQuestions() {
+//     for (let i = 0; i < allQuestions.length; i++) {
+//         questionTextEl.textContent = allQuestions[i];
+
+//     }
 
 
 
@@ -56,6 +90,7 @@ function hideButton() {
 
 startButton.addEventListener('click', setTimer);
 startButton.addEventListener('click', hideButton);
+startButton.addEventListener('click', startGame);
 
 
 
@@ -73,9 +108,6 @@ startButton.addEventListener('click', hideButton);
 //     answerButtons.textContent = "Hello"
 // })
 
-
-
-
     // .textContent
 
 // function startGame() {
@@ -91,15 +123,7 @@ startButton.addEventListener('click', hideButton);
 //     count++
 // }
 
-
-
 // startButton.addEventListener("click", "start");
-
-
-
-
-
-
 
 // Tips:
 
