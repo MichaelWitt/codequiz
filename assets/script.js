@@ -51,38 +51,20 @@ function hideButton() {
     questionDisplayEl.style.display = "inline";
 }
 
-var randomQuestion, currentQuestion;
-
-function startGame() {
-    randomQuestion = allQuestions.sort(() => Math.random() - .5)
-    currentQuestion = 0;
-    nextQuestion()
-
+for (let i = 0; i < allQuestions.length; i++) {
+    function showQuestions() {
+        questionTextEl.textContent = allQuestions[0];
+    }
 }
 
-function nextQuestion() {
-    showQuestion(randomQuestion[currentQuestion])
+for (let i = 0; i < possibleAnswers.length; i++) {
+    function showAnswers() {
+        answerOne.textContent = possibleAnswers[0][0];
+        answerTwo.textContent = possibleAnswers[0][1];
+        answerThree.textContent = possibleAnswers[0][2];
+        answerFour.textContent = possibleAnswers[0][3];
+    }
 }
-
-function showQuestion(allQuestions) {
-    questionTextEl.innerText = allQuestions;
-}
-
-function chooseAnswer() {
-
-}
-
-
-
-
-
-// function showQuestions() {
-//     for (let i = 0; i < allQuestions.length; i++) {
-//         questionTextEl.textContent = allQuestions[i];
-
-//     }
-
-
 
 
 
@@ -90,13 +72,45 @@ function chooseAnswer() {
 
 startButton.addEventListener('click', setTimer);
 startButton.addEventListener('click', hideButton);
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', showQuestions);
+startButton.addEventListener('click', showAnswers);
 
 
 
 
 
 
+
+
+
+// var randomQuestion, currentQuestion;
+
+// function startGame() {
+//     randomQuestion = allQuestions.sort(() => Math.random() - .5)
+//     currentQuestion = 0;
+//     nextQuestion()
+// }
+
+// function nextQuestion() {
+//     showQuestion(randomQuestion[currentQuestion])
+// }
+
+// function showQuestion() {
+//     questionTextEl.innerText = allQuestions[i];
+// }
+// 
+//     if (answer.possibleAnswers) {
+//         button.dataset.possibleAnswers = answer.possibleAnswers
+//     }
+//     button.addEventListener('click', chooseAnswer)
+//     answersEl.appendChild(button);
+// })
+
+// function showQuestions() {
+//     for (let i = 0; i < allQuestions.length; i++) {
+//         questionTextEl.textContent = allQuestions[i];
+
+//     }
 
 
 
