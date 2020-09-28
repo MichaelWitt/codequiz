@@ -51,34 +51,135 @@ function hideButton() {
     questionDisplayEl.style.display = "inline";
 }
 
-
-
 for (let i = 0; i < allQuestions.length; i++) {
     function showQuestions() {
-        questionTextEl.textContent = allQuestions[i];
-    }
-}
-
-for (let z = 0; z < correctAnswers.length; z++) {
-    function correct() {
-        correctAnswers[z];
+        questionTextEl.textContent = allQuestions[0];
     }
 }
 
 for (let p = 0; p < possibleAnswers.length; p++) {
     function showAnswers() {
-        answerOne.textContent = possibleAnswers[p][0];
-        answerTwo.textContent = possibleAnswers[p][1];
-        answerThree.textContent = possibleAnswers[p][2];
-        answerFour.textContent = possibleAnswers[p][3];
+        answerOne.textContent = possibleAnswers[0][0];
+        answerTwo.textContent = possibleAnswers[0][1];
+        answerThree.textContent = possibleAnswers[0][2];
+        answerFour.textContent = possibleAnswers[0][3];
     };
 }
 
-answersEl.onclick = function selectedAnswer() {
+answerFour.onclick = function questionTwo() {
     score++;
     console.log('score:', score)
-    questionDisplayEl.style.display = "none";
+
+    questionTextEl.textContent = allQuestions[1];
+
+    answerOne.textContent = possibleAnswers[1][0];
+    answerTwo.textContent = possibleAnswers[1][1];
+    answerThree.textContent = possibleAnswers[1][2];
+    answerFour.textContent = possibleAnswers[1][3];
+
+    answerFour.onclick = function questionThree() {
+        score++;
+        console.log('score:', score)
+
+        questionTextEl.textContent = allQuestions[2];
+
+        answerOne.textContent = possibleAnswers[2][0];
+        answerTwo.textContent = possibleAnswers[2][1];
+        answerThree.textContent = possibleAnswers[2][2];
+        answerFour.textContent = possibleAnswers[2][3];
+
+        answerFour.onclick = function questionFour() {
+            score++;
+            console.log('score:', score)
+
+            questionTextEl.textContent = allQuestions[3];
+
+            answerOne.textContent = possibleAnswers[3][0];
+            answerTwo.textContent = possibleAnswers[3][1];
+            answerThree.textContent = possibleAnswers[3][2];
+            answerFour.textContent = possibleAnswers[3][3];
+
+            answerFour.onclick = function questionFive() {
+                score++;
+                console.log('score:', score)
+
+                questionTextEl.textContent = allQuestions[4];
+
+                answerOne.textContent = possibleAnswers[4][0];
+                answerTwo.textContent = possibleAnswers[4][1];
+                answerThree.textContent = possibleAnswers[4][2];
+                answerFour.textContent = possibleAnswers[4][3];
+
+                answerFour.onclick = function questionSix() {
+                    score++;
+                    console.log('score:', score)
+
+                    questionTextEl.textContent = allQuestions[5];
+
+                    answerOne.textContent = possibleAnswers[5][0];
+                    answerTwo.textContent = possibleAnswers[5][1];
+                    answerThree.textContent = possibleAnswers[5][2];
+                    answerFour.textContent = possibleAnswers[5][3];
+
+                    answerFour.onclick = function questionSeven() {
+                        score++;
+                        console.log('score:', score)
+
+                        questionTextEl.textContent = allQuestions[6];
+
+                        answerOne.textContent = possibleAnswers[6][0];
+                        answerTwo.textContent = possibleAnswers[6][1];
+                        answerThree.textContent = possibleAnswers[6][2];
+                        answerFour.textContent = possibleAnswers[6][3];
+
+                        answerFour.onclick = function questionEight() {
+                            score++;
+                            console.log('score:', score)
+
+                            questionTextEl.textContent = allQuestions[7];
+
+                            answerOne.textContent = possibleAnswers[7][0];
+                            answerTwo.textContent = possibleAnswers[7][1];
+                            answerThree.textContent = possibleAnswers[7][2];
+                            answerFour.textContent = possibleAnswers[7][3];
+
+                            answerFour.onclick = function questionNine() {
+                                score++;
+                                console.log('score:', score)
+
+                                questionTextEl.textContent = allQuestions[8];
+
+                                answerOne.textContent = possibleAnswers[8][0];
+                                answerTwo.textContent = possibleAnswers[8][1];
+                                answerThree.textContent = possibleAnswers[8][2];
+                                answerFour.textContent = possibleAnswers[8][3];
+
+                                answerFour.onclick = function questionTen() {
+                                    score++;
+                                    console.log('score:', score)
+
+                                    questionTextEl.textContent = allQuestions[1];
+
+                                    answerOne.textContent = possibleAnswers[9][0];
+                                    answerTwo.textContent = possibleAnswers[9][1];
+                                    answerThree.textContent = possibleAnswers[9][2];
+                                    answerFour.textContent = possibleAnswers[9][3];
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+
+
+
+
+
 
 
 // localStorage.setItem("highScoreLeaderboard", nameInput);
