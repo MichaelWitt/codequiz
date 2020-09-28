@@ -57,18 +57,30 @@ for (let i = 0; i < allQuestions.length; i++) {
     }
 }
 
-for (let i = 0; i < possibleAnswers.length; i++) {
+for (let p = 0; p < possibleAnswers.length; p++) {
     function showAnswers() {
         answerOne.textContent = possibleAnswers[0][0];
         answerTwo.textContent = possibleAnswers[0][1];
         answerThree.textContent = possibleAnswers[0][2];
         answerFour.textContent = possibleAnswers[0][3];
+
+        $("#answer-4").click(function () {
+            score++;
+            console.log('score:', score)
+
+            questionTextEl.textContent = allQuestions[1];
+
+            answerOne.textContent = possibleAnswers[1][0];
+            answerTwo.textContent = possibleAnswers[1][1];
+            answerThree.textContent = possibleAnswers[1][2];
+            answerFour.textContent = possibleAnswers[1][3];
+        });
     }
 }
 
 
 
-
+// localStorage.setItem("highScoreLeaderboard", nameInput);
 
 startButton.addEventListener('click', setTimer);
 startButton.addEventListener('click', hideButton);
