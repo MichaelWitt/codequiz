@@ -51,33 +51,34 @@ function hideButton() {
     questionDisplayEl.style.display = "inline";
 }
 
+
+
 for (let i = 0; i < allQuestions.length; i++) {
     function showQuestions() {
-        questionTextEl.textContent = allQuestions[0];
+        questionTextEl.textContent = allQuestions[i];
+    }
+}
+
+for (let z = 0; z < correctAnswers.length; z++) {
+    function correct() {
+        correctAnswers[z];
     }
 }
 
 for (let p = 0; p < possibleAnswers.length; p++) {
     function showAnswers() {
-        answerOne.textContent = possibleAnswers[0][0];
-        answerTwo.textContent = possibleAnswers[0][1];
-        answerThree.textContent = possibleAnswers[0][2];
-        answerFour.textContent = possibleAnswers[0][3];
-
-        $("#answer-4").click(function () {
-            score++;
-            console.log('score:', score)
-
-            questionTextEl.textContent = allQuestions[1];
-
-            answerOne.textContent = possibleAnswers[1][0];
-            answerTwo.textContent = possibleAnswers[1][1];
-            answerThree.textContent = possibleAnswers[1][2];
-            answerFour.textContent = possibleAnswers[1][3];
-        });
-    }
+        answerOne.textContent = possibleAnswers[p][0];
+        answerTwo.textContent = possibleAnswers[p][1];
+        answerThree.textContent = possibleAnswers[p][2];
+        answerFour.textContent = possibleAnswers[p][3];
+    };
 }
 
+answersEl.onclick = function selectedAnswer() {
+    score++;
+    console.log('score:', score)
+    questionDisplayEl.style.display = "none";
+}
 
 
 // localStorage.setItem("highScoreLeaderboard", nameInput);
@@ -89,149 +90,3 @@ startButton.addEventListener('click', showAnswers);
 
 
 
-
-
-
-
-
-
-// var randomQuestion, currentQuestion;
-
-// function startGame() {
-//     randomQuestion = allQuestions.sort(() => Math.random() - .5)
-//     currentQuestion = 0;
-//     nextQuestion()
-// }
-
-// function nextQuestion() {
-//     showQuestion(randomQuestion[currentQuestion])
-// }
-
-// function showQuestion() {
-//     questionTextEl.innerText = allQuestions[i];
-// }
-// 
-//     if (answer.possibleAnswers) {
-//         button.dataset.possibleAnswers = answer.possibleAnswers
-//     }
-//     button.addEventListener('click', chooseAnswer)
-//     answersEl.appendChild(button);
-// })
-
-// function showQuestions() {
-//     for (let i = 0; i < allQuestions.length; i++) {
-//         questionTextEl.textContent = allQuestions[i];
-
-//     }
-
-
-
-
-
-// var answerButtons = document.querySelector(".question-display")
-// answerButtons.addEventListener("click", function () {
-//     console.log(e.target)
-//     answerButtons.textContent = "Hello"
-// })
-
-    // .textContent
-
-// function startGame() {
-
-
-// // } */
-
-// var count = 0
-// var myArray = [“a”, “b”, “c”]
-// someButton.addEventListener(“click”, function () {
-//     console.log(“letter “, myArray[count])
-
-//     count++
-// }
-
-// startButton.addEventListener("click", "start");
-
-// Tips:
-
-// Start with a 1 question game
-
-
-
-// // Password Generator JS
-
-// // Linking JS to HTML
-// var generateBtn = document.querySelector("#generate");
-
-// // Variables to generate password characters from
-// var specialSymbols = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "_", "`", "{", "|", "}", "~", "]"];
-
-// var numberSymbols = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
-// var lowerSymbols = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-// var upperSymbols = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-// // Function to collect the desired password length of 8 to 128 characters
-// function generatePassword() {
-//     var characters = prompt('How many characters would you like in your password?');
-
-//     if (characters < 8 || characters > 128) {
-//         alert('Password length must be between 8 and 128 characters');
-//         generatePassword();
-//     }
-
-//     // Variables & alerts to collect user's desired character password preference
-//     var special = confirm('Click OK if you would like special characters in your password.');
-//     var numbers = confirm('Click OK if you would like numbers in your password.');
-//     var lowercase = confirm('Click OK if you would like lowercase characters in your password.');
-//     var uppercase = confirm('Click OK if you would like uppercase characters in your password.');
-
-//     // If statement to make it so user has to choose at least one character type
-//     if (!special && !numbers && !lowercase && !uppercase) {
-//         alert('Please confirm at least one character type.');
-//         generatePassword();
-//     }
-
-//     // Created a blank array to feed the selected characters into
-//     var passwordCharacters = [];
-
-//     // If statements that add selected character type arrays and concats them into the passwordCharacters array
-//     if (special) {
-//         passwordCharacters = passwordCharacters.concat(specialSymbols)
-//     };
-
-//     if (numbers) {
-//         passwordCharacters = passwordCharacters.concat(numberSymbols)
-//     };
-
-//     if (lowercase) {
-//         passwordCharacters = passwordCharacters.concat(lowerSymbols)
-//     };
-
-//     if (uppercase) {
-//         passwordCharacters = passwordCharacters.concat(upperSymbols)
-//     };
-
-//     // Created a variable that the random characters from the passwordCharacters array will feed into
-//     var generatedPassword = ""
-
-//     for (let i = 0; i < characters; i++) {
-//         // Generates random number between 0 and array length minus 1
-//         var randomNum = Math.floor(Math.random() * passwordCharacters.length);
-//         // Selects random password from the PasswordCharacters array and concats to generatedPassword
-//         generatedPassword += passwordCharacters[randomNum];
-//     }
-//     // Removes the first four elements of the array and makes sure that all arrays are in the password
-//     return generatedPassword;
-// }
-
-// // A function that writes the password to the password html card
-// function writePassword() {
-//     var password = generatePassword();
-//     var passwordText = document.querySelector("#password");
-
-//     passwordText.value = password;
-// }
-
-// // Adds event listener that writes password when all functions are complete
-// generateBtn.addEventListener("click", writePassword);
