@@ -158,13 +158,25 @@ answerFour.onclick = function questionTwo() {
                                     score++;
                                     console.log('score:', score)
 
-                                    questionTextEl.textContent = allQuestions[1];
+                                    questionTextEl.textContent = allQuestions[9];
 
                                     answerOne.textContent = possibleAnswers[9][0];
                                     answerTwo.textContent = possibleAnswers[9][1];
                                     answerThree.textContent = possibleAnswers[9][2];
                                     answerFour.textContent = possibleAnswers[9][3];
 
+                                    answerFour.onclick = function leaderboard() {
+                                        score++;
+                                        console.log('score:', score)
+
+                                        questionTextEl.textContent = "Leaderboard";
+
+                                        answerOne.textContent = "1st Place: JMW";
+                                        answerTwo.textContent = "2nd Place: ROK";
+                                        answerThree.textContent = "3rd Place: CIA";
+                                        answerFour.textContent = "4th Place: LOL";
+
+                                    }
                                 }
                             }
                         }
@@ -180,9 +192,48 @@ answerFour.onclick = function questionTwo() {
 
 
 
+// leaderBoard();
+
+// function displayMessage(type, message) {
+//     msgDiv.textContent = message;
+//     msgDiv.setAttribute("class", type);
+// }
+
+// function renderLastRegistered() {
+//     var email = localStorage.getItem("email");
+//     var password = localStorage.getItem("password");
+
+//     if (!email || !password) {
+//         return;
+//     }
+
+//     userEmailSpan.textContent = email;
+//     userPasswordSpan.textContent = password;
+// }
+
+// signUpButton.addEventListener("click", function (event) {
+//     event.preventDefault();
+
+//     var email = document.querySelector("#email").value;
+//     var password = document.querySelector("#password").value;
+
+//     if (email === "") {
+//         displayMessage("error", "Email cannot be blank");
+//     } else if (password === "") {
+//         displayMessage("error", "Password cannot be blank");
+//     } else {
+//         displayMessage("success", "Registered successfully");
+
+//         localStorage.setItem("email", email);
+//         localStorage.setItem("password", password);
+//         renderLastRegistered();
+//     }
+// });
 
 
-// localStorage.setItem("highScoreLeaderboard", nameInput);
+
+
+
 
 startButton.addEventListener('click', setTimer);
 startButton.addEventListener('click', hideButton);
