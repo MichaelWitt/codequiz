@@ -17,8 +17,8 @@ View the website at: https://michaelwitt.github.io/codequiz
 View the refactory at: https://github.com/MichaelWitt/codequiz
 
 Website Preview: ![alt text](https://michaelwitt.github.io/codequiz/assets/images/codequiz.png)
-Website Preview: ![alt text](https://michaelwitt.github.io/codequiz/assets/images/leaderboard.png)
-Website Preview: ![alt text](https://michaelwitt.github.io/codequiz/assets/images/questions.png)
+Quiz: ![alt text](https://michaelwitt.github.io/codequiz/assets/images/questions.png)
+Leaderboard: ![alt text](https://michaelwitt.github.io/codequiz/assets/images/leaderboard.png)
 
 ## Updates
 
