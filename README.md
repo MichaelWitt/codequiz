@@ -1,22 +1,24 @@
 # codequiz
-Code quiz is a timed quiz with multiple questions, powered by Javascript. Give it a try! And as always, thanks for stopping in! 
+Code quiz is a timed quiz with multiple questions, powered by Javascript. Give it a try! 
 
 _Code Quiz._
 
 
 Hello! My name is Mike. I am a dreamer, designer, and developer. Welcome to the code quiz!
 
-<!-- I created the password generator by writing the Javascript from scratch, which I linked to a pre-built html & css. It was a fantastic challenge that pushed me to the limits, trying to implement my newly learned hand at writing Javascript. I was able to create a working password generator by breaking it down, step by step, using the following methods: linking my javascript and html, creating variables for all of the possible password characters, making a function and alert to let the user input a password length of 8-128 characters, creating confirm alerts so the user could select what type of characters they wanted, writing an empty array which I fed with the selected possible characters, creating a loop that assisted in selecting random characters at appropriate lengths, wrote the generated password to the html, and added an Event Listener so that the operation would run once the user clicked the Generate Password Button. Overall, it was a very challenging and logically intensive project; at the same time, it was quite rewarding to learn, grow, and accomplish the mission of creating a working password generator!  -->
+In this mission I was given the opportunity of creating a code quiz that tests a users knowledge of JavaScript. I started this one from scratch, by writing the html that contained the frame for the quiz, creating the css, which stylized the website and formatted it with a beautiful and accessible layout, and finished up by adding javascript, which brought the quiz to life, by adding a timer, questions, answers, and more! I hope that you enjoy seeing the fruits of my labors, in the Code Quiz.  
 
 Thanks for stopping in! I look forward to working together to make the present and future a better place. 
 
 ## Website & Refactory
 
-View the website at: https://michaelwitt.github.io/codequiz/
+View the website at: https://michaelwitt.github.io/codequiz
 
 View the refactory at: https://github.com/MichaelWitt/codequiz
 
-<!-- Website Preview: ![alt text](https://michaelwitt.github.io/passwordgenerator/website.png) -->
+Website Preview: ![alt text](https://michaelwitt.github.io/assets/images/codequiz.png)
+Website Preview: ![alt text](https://michaelwitt.github.io/assets/images/leaderboard.png)
+Website Preview: ![alt text](https://michaelwitt.github.io/assets/images/questions.png)
 
 ## Updates
 
@@ -35,7 +37,7 @@ Question inspiration from: https://www.guru99.com/javascript-interview-questions
 
 Licensed under the MIT license.
 
-<!-- https://michaelwitt.github.io/codequiz/assets/LICENSE.txt -->
+https://michaelwitt.github.io/codequiz/assets/LICENSE.txt
 
 ## Contributor Covenant Code of Conduct
 
