@@ -33,16 +33,6 @@ Olia Gozha, @olia - For the awesome background photo - Thanks!
 
 Question inspiration from: https://www.guru99.com/javascript-interview-questions-answers.html - Thanks!
 
-## License
-
-Licensed under the MIT license.
-
-https://michaelwitt.github.io/codequiz/assets/LICENSE.txt
-
-## Contributor Covenant Code of Conduct
-
-https://www.contributor-covenant.org/version/2/0/code_of_conduct/
-
 ## Thanks For Visiting!
 
 Come back soon :)
