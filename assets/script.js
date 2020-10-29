@@ -48,14 +48,14 @@ questionArray = [
 
     { questionText: 'What is JavaScript?', answers: ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 3 },
     { questionText: 'What is not a JavaScript Data Type?', answers: ['Object', 'Defined', 'Number', 'String'], correctAnswer: 1 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
-    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    { questionText: 'Which is not a looping structure in JavaScript?', answers: ['If', 'For', 'While', 'Do-while'], correctAnswer: 0 },
+    { questionText: 'Whats an undefined value in JavaScript?', answers: ['Computable', 'Variable not assigned to a value', 'Property exists', 'A plegmen variable'], correctAnswer: 1 },
+    { questionText: 'What type of popup boxes are in JavaScript?', answers: ['Red Alert', 'Avid', 'Short', 'Prompt'], correctAnswer: 3 },
+    { questionText: 'Is the data type of variables in Javascript object data types?', answers: ['True', 'False', 'Never', 'Ever'], correctAnswer: 0 },
+    { questionText: 'Does JavaScript have concept level scope?', answers: ['Yes', 'No', 'Maybe', 'So'], correctAnswer: 1 },
+    { questionText: 'What year did JavaScript make an appearance?', answers: ['1990', '2010', '1970', '1995'], correctAnswer: 3 },
+    { questionText: 'Is Java a nickname for JavaScript?', answers: ['Yes', 'No', 'Sometimes', 'Depends on the case'], correctAnswer: 1 },
+    { questionText: 'What are JavaScript cookies?', answers: ['Yummy', 'Bugs', 'Large storage files', 'Small test files'], correctAnswer: 3 },
 
 ];
 
