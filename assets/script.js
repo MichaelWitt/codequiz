@@ -1,197 +1,126 @@
 // Code Quiz JS
 
-var startButton = document.querySelector("#start");
-var timerEl = document.querySelector('.timer');
-var questionsEl = document.querySelector('.questions');
-var quizEl = document.querySelector('.quiz');
-var questionDisplayEl = document.querySelector('.question-display');
-var questionTextEl = document.querySelector('#question-text');
-var answersEl = document.querySelector('.answers');
+var startButton = $("#start");
+var timerEl = $('.timer');
+var questionsHeader = $('.questions');
+var quizEl = $('.quiz');
+var questionDisplayEl = $('.question-display');
+var question = $('#question-text');
+var answers = $('.answers');
 var countdown = 100;
 var score = 0;
-var answerOne = document.querySelector('#answer-1');
-var answerTwo = document.querySelector('#answer-2');
-var answerThree = document.querySelector('#answer-3');
-var answerFour = document.querySelector('#answer-4');
+var questionCounter = 0;
+console.log('score:', score)
+var answerZero = $('#answer-0');
+var answerOne = $('#answer-1');
+var answerTwo = $('#answer-2');
+var answerThree = $('#answer-3');
 
-var allQuestions = ['What is JavaScript?', 'What is not a JavaScript Data Type?', 'Which is not a looping structure in JavaScript?', 'Whats an undefined value in JavaScript?', 'What type of popup boxes are in JavaScript?', 'Is the data type of variables in Javascript object data types?', 'Does JavaScript have concept level scope?', 'What year did JavaScript make an appearance?', 'What are JavaScript cookies?']
+// var allQuestions = ['What is JavaScript?', 'What is not a JavaScript Data Type?', 'Which is not a looping structure in JavaScript?', 'Whats an undefined value in JavaScript?', 'What type of popup boxes are in JavaScript?', 'Is the data type of variables in Javascript object data types?', 'Does JavaScript have concept level scope?', 'What year did JavaScript make an appearance?', 'What are JavaScript cookies?']
 
-var possibleAnswers = [
-    ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'],
-    ['Object', 'Defined', 'Number', 'String'],
-    ['If', 'For', 'While', 'Do-while'],
-    ['Computable', 'Variable not assigned to a value', 'Property exists', 'A plegmen variable'],
-    ['Red Alert', 'Avid', 'Short', 'Prompt'],
-    ['True', 'False', 'Never', 'Ever'],
-    ['Yes', 'No', 'Maybe', 'So'],
-    ['1990', '2010', '1970', '1995'],
-    ['Yes', 'No', 'Sometimes', 'Depends on the case'],
-    ['Yummy', 'Bugs', 'Large storage files', 'Small test files']
-]
+// var possibleAnswers = [
+//     ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'],
+//     ['Object', 'Defined', 'Number', 'String'],
+//     ['If', 'For', 'While', 'Do-while'],
+//     ['Computable', 'Variable not assigned to a value', 'Property exists', 'A plegmen variable'],
+//     ['Red Alert', 'Avid', 'Short', 'Prompt'],
+//     ['True', 'False', 'Never', 'Ever'],
+//     ['Yes', 'No', 'Maybe', 'So'],
+//     ['1990', '2010', '1970', '1995'],
+//     ['Yes', 'No', 'Sometimes', 'Depends on the case'],
+//     ['Yummy', 'Bugs', 'Large storage files', 'Small test files']
+// ]
 
-var correctAnswers = ['A programming language', 'Defined', 'If', 'Variable not assigned to a value', 'Prompt', 'True', 'No', '1995', 'Yes', 'Small test files']
+// var correctAnswers = ['A programming language', 'Defined', 'If', 'Variable not assigned to a value', 'Prompt', 'True', 'No', '1995', 'Yes', 'Small test files']
+
+// $(document).on('click', '#start', () => { })
+
+
+
+function displayQuestion() {
+    question.text(questionArray[questionCounter].questionText);
+    questionArray[questionCounter].answers.forEach((answer, i) => {
+        $(`#answer-${i}`).text(answer)
+    })
+}
+
+questionArray = [
+
+    { questionText: 'What is JavaScript?', answers: ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 3 },
+    { questionText: 'What is not a JavaScript Data Type?', answers: ['Object', 'Defined', 'Number', 'String'], correctAnswer: 1 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+    // { questionText: 'What is JavaScript?', answers ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 4 },
+
+];
+
 
 function setTimer() {
     var timerTotal = setInterval(function () {
         countdown--;
-        timerEl.textContent = countdown;
+        timerEl.text(countdown);
 
         if (countdown === 0) {
             clearInterval(timerTotal);
-            questionsEl.textContent = 'Game Over';
-            questionTextEl.textContent = 'Thanks for playing! Try again :)';
-            answersEl.textContent = '';
+            questionsHeader.text('Game Over');
+            question.text('Thanks for playing! Try again :)');
+            answers.text('');
         }
     }, 1000);
 }
 
+
+
 function hideButton() {
-    startButton.style.display = "none";
-    quizEl.style.display = "none";
-    questionDisplayEl.style.display = "inline";
+    startButton.hide();
+    quizEl.hide();
+    questionDisplayEl.css('display', 'inline');
 }
 
-for (let i = 0; i < allQuestions.length; i++) {
-    function showQuestions() {
-        questionTextEl.textContent = allQuestions[0];
-    }
-}
+startButton.on('click', () => {
+    setTimer();
+    hideButton();
+    displayQuestion();
+});
 
-for (let p = 0; p < possibleAnswers.length; p++) {
-    function showAnswers() {
-        answerOne.textContent = possibleAnswers[0][0];
-        answerTwo.textContent = possibleAnswers[0][1];
-        answerThree.textContent = possibleAnswers[0][2];
-        answerFour.textContent = possibleAnswers[0][3];
-    };
-}
 
-answerFour.onclick = function questionTwo() {
-    score++;
-    console.log('score:', score)
 
-    questionTextEl.textContent = allQuestions[1];
+$('.answerButtons').on('click', function () {
+    var answerSelected = this.id[this.id.length - 1];
+    var answerParsed = parseInt(answerSelected);
+    var correctAnswerNumber = questionArray[questionCounter].correctAnswer;
 
-    answerOne.textContent = possibleAnswers[1][0];
-    answerTwo.textContent = possibleAnswers[1][1];
-    answerThree.textContent = possibleAnswers[1][2];
-    answerFour.textContent = possibleAnswers[1][3];
 
-    answerFour.onclick = function questionThree() {
+    if (answerParsed === correctAnswerNumber) {
         score++;
-        console.log('score:', score)
+        questionCounter++;
+        displayQuestion();
 
-        questionTextEl.textContent = allQuestions[2];
-
-        answerOne.textContent = possibleAnswers[2][0];
-        answerTwo.textContent = possibleAnswers[2][1];
-        answerThree.textContent = possibleAnswers[2][2];
-        answerFour.textContent = possibleAnswers[2][3];
-
-        answerFour.onclick = function questionFour() {
-            score++;
-            console.log('score:', score)
-
-            questionTextEl.textContent = allQuestions[3];
-
-            answerOne.textContent = possibleAnswers[3][0];
-            answerTwo.textContent = possibleAnswers[3][1];
-            answerThree.textContent = possibleAnswers[3][2];
-            answerFour.textContent = possibleAnswers[3][3];
-
-            answerFour.onclick = function questionFive() {
-                score++;
-                console.log('score:', score)
-
-                questionTextEl.textContent = allQuestions[4];
-
-                answerOne.textContent = possibleAnswers[4][0];
-                answerTwo.textContent = possibleAnswers[4][1];
-                answerThree.textContent = possibleAnswers[4][2];
-                answerFour.textContent = possibleAnswers[4][3];
-
-                answerFour.onclick = function questionSix() {
-                    score++;
-                    console.log('score:', score)
-
-                    questionTextEl.textContent = allQuestions[5];
-
-                    answerOne.textContent = possibleAnswers[5][0];
-                    answerTwo.textContent = possibleAnswers[5][1];
-                    answerThree.textContent = possibleAnswers[5][2];
-                    answerFour.textContent = possibleAnswers[5][3];
-
-                    answerFour.onclick = function questionSeven() {
-                        score++;
-                        console.log('score:', score)
-
-                        questionTextEl.textContent = allQuestions[6];
-
-                        answerOne.textContent = possibleAnswers[6][0];
-                        answerTwo.textContent = possibleAnswers[6][1];
-                        answerThree.textContent = possibleAnswers[6][2];
-                        answerFour.textContent = possibleAnswers[6][3];
-
-                        answerFour.onclick = function questionEight() {
-                            score++;
-                            console.log('score:', score)
-
-                            questionTextEl.textContent = allQuestions[7];
-
-                            answerOne.textContent = possibleAnswers[7][0];
-                            answerTwo.textContent = possibleAnswers[7][1];
-                            answerThree.textContent = possibleAnswers[7][2];
-                            answerFour.textContent = possibleAnswers[7][3];
-
-                            answerFour.onclick = function questionNine() {
-                                score++;
-                                console.log('score:', score)
-
-                                questionTextEl.textContent = allQuestions[8];
-
-                                answerOne.textContent = possibleAnswers[8][0];
-                                answerTwo.textContent = possibleAnswers[8][1];
-                                answerThree.textContent = possibleAnswers[8][2];
-                                answerFour.textContent = possibleAnswers[8][3];
-
-                                answerFour.onclick = function questionTen() {
-                                    score++;
-                                    console.log('score:', score)
-
-                                    questionTextEl.textContent = allQuestions[9];
-
-                                    answerOne.textContent = possibleAnswers[9][0];
-                                    answerTwo.textContent = possibleAnswers[9][1];
-                                    answerThree.textContent = possibleAnswers[9][2];
-                                    answerFour.textContent = possibleAnswers[9][3];
-
-                                    answerFour.onclick = function leaderboard() {
-                                        score++;
-                                        console.log('score:', score)
-
-                                        questionTextEl.textContent = "Leaderboard";
-
-                                        answerOne.textContent = "1st Place: JMW";
-                                        answerTwo.textContent = "2nd Place: ROK";
-                                        answerThree.textContent = "3rd Place: CIA";
-                                        answerFour.textContent = "4th Place: LOL";
-
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+    };
+});
 
 
-startButton.addEventListener('click', setTimer);
-startButton.addEventListener('click', hideButton);
-startButton.addEventListener('click', showQuestions);
-startButton.addEventListener('click', showAnswers);
+        // increase the score
+        // score++;
+        // increment our question counter 
+        // check for end of game (no more question) 
+          // if it is the end of the game, display end of game stuff
+          // add high score (or check hs...)
+        // if its NOT the end of the game
+          // show the next question
+    // else if they get the answer wrong...
+        // check for end of game
+        // increment question counter
+        // display next question
+
+    //}
+
+
 
 
 
