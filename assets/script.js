@@ -10,30 +10,10 @@ var answers = $('.answers');
 var countdown = 100;
 var score = 0;
 var questionCounter = 0;
-console.log('score:', score)
 var answerZero = $('#answer-0');
 var answerOne = $('#answer-1');
 var answerTwo = $('#answer-2');
 var answerThree = $('#answer-3');
-
-// var allQuestions = ['What is JavaScript?', 'What is not a JavaScript Data Type?', 'Which is not a looping structure in JavaScript?', 'Whats an undefined value in JavaScript?', 'What type of popup boxes are in JavaScript?', 'Is the data type of variables in Javascript object data types?', 'Does JavaScript have concept level scope?', 'What year did JavaScript make an appearance?', 'What are JavaScript cookies?']
-
-// var possibleAnswers = [
-//     ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'],
-//     ['Object', 'Defined', 'Number', 'String'],
-//     ['If', 'For', 'While', 'Do-while'],
-//     ['Computable', 'Variable not assigned to a value', 'Property exists', 'A plegmen variable'],
-//     ['Red Alert', 'Avid', 'Short', 'Prompt'],
-//     ['True', 'False', 'Never', 'Ever'],
-//     ['Yes', 'No', 'Maybe', 'So'],
-//     ['1990', '2010', '1970', '1995'],
-//     ['Yes', 'No', 'Sometimes', 'Depends on the case'],
-//     ['Yummy', 'Bugs', 'Large storage files', 'Small test files']
-// ]
-
-// var correctAnswers = ['A programming language', 'Defined', 'If', 'Variable not assigned to a value', 'Prompt', 'True', 'No', '1995', 'Yes', 'Small test files']
-
-// $(document).on('click', '#start', () => { })
 
 
 
@@ -75,7 +55,6 @@ function setTimer() {
 }
 
 
-
 function hideButton() {
     startButton.hide();
     quizEl.hide();
@@ -100,14 +79,13 @@ $('.answerButtons').on('click', function () {
         score++;
         questionCounter++;
         displayQuestion();
-
-    };
+    } else {
+        questionCounter++;
+        displayQuestion();
+    }
 });
 
 
-        // increase the score
-        // score++;
-        // increment our question counter 
         // check for end of game (no more question) 
           // if it is the end of the game, display end of game stuff
           // add high score (or check hs...)
