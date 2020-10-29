@@ -7,6 +7,7 @@ var quizEl = $('.quiz');
 var questionDisplayEl = $('.question-display');
 var question = $('#question-text');
 var answers = $('.answers');
+var playAgain = $('.playagain');
 var countdown = 100;
 var score = 0;
 var questionCounter = 0;
@@ -67,6 +68,13 @@ startButton.on('click', () => {
     displayQuestion();
 });
 
+// function endGame() {
+//     if (answerParsed === undefined) {
+//         questionsHeader.text('Thanks For Playing!');
+//         question.text('Score: ' + score);
+//         answers.text('Try again :)');
+//     }
+// }
 
 
 $('.answerButtons').on('click', function () {
@@ -83,7 +91,17 @@ $('.answerButtons').on('click', function () {
         questionCounter++;
         displayQuestion();
     }
+
+    if (questionCounter === 9) {
+        questionsHeader.text('Thanks For Playing!');
+        question.text('Score: ' + score + '/10');
+        answers.text('Try again :)');
+    }
+
+
 });
+
+
 
 
         // check for end of game (no more question) 
