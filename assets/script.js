@@ -8,14 +8,14 @@ var questionDisplayEl = $('.question-display');
 var question = $('#question-text');
 var answers = $('.answers');
 var playAgain = $('.playagain');
-var countdown = 100;
-var score = 0;
-var questionCounter = 0;
 var answerZero = $('#answer-0');
 var answerOne = $('#answer-1');
 var answerTwo = $('#answer-2');
 var answerThree = $('#answer-3');
-
+var correctIncorrect = $('#solutions');
+var countdown = 100;
+var score = 0;
+var questionCounter = 0;
 
 
 function displayQuestion() {
@@ -55,12 +55,16 @@ function setTimer() {
     }, 1000);
 }
 
-
 function hideButton() {
     startButton.hide();
     quizEl.hide();
     questionDisplayEl.css('display', 'inline');
 }
+
+function displayPlayAgain() {
+    playAgain.css('display', 'block')
+}
+
 
 startButton.on('click', () => {
     setTimer();
@@ -87,15 +91,23 @@ $('.answerButtons').on('click', function () {
         score++;
         questionCounter++;
         displayQuestion();
+        correctIncorrect.text('Correct :)');
+        correctIncorrect.show(1).delay(1000).hide(1);
+
     } else {
         questionCounter++;
         displayQuestion();
+        correctIncorrect.text('Incorrect');
+        correctIncorrect.show(1).delay(1000).hide(1);
     }
 
     if (questionCounter === 9) {
         questionsHeader.text('Thanks For Playing!');
-        question.text('Score: ' + score + '/10');
-        answers.text('Try again :)');
+        var timeAccomplished = (100 - countdown);
+        question.text('Score: ' + score + '/10 ' + 'Time: ' + timeAccomplished + ' Seconds');
+        stopTimer();
+        answers.html(`<a href="index.html" alt="Page reload">
+        <button class="answerButtons answers">Play Again</button></a>`);
     }
 
 
