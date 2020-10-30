@@ -37,7 +37,7 @@ questionArray = [
     { questionText: 'What year did JavaScript make an appearance?', answers: ['1990', '2010', '1970', '1995'], correctAnswer: 3 },
     { questionText: 'Is Java a nickname for JavaScript?', answers: ['Yes', 'No', 'Sometimes', 'Depends on the case'], correctAnswer: 1 },
     { questionText: 'What are JavaScript cookies?', answers: ['Yummy', 'Bugs', 'Large storage files', 'Small test files'], correctAnswer: 3 },
-
+    { questionText: 'End Game', answers: ['Thanks', 'For', 'Playing', 'Friends'] },
 ];
 
 
@@ -53,8 +53,8 @@ function setTimer() {
             answers.text('');
         }
 
-        if (questionCounter === 9) {
-            return;
+        if (questionCounter === 10) {
+            clearInterval(timerTotal);
         }
 
     }, 1000);
@@ -76,14 +76,6 @@ startButton.on('click', () => {
     hideButton();
     displayQuestion();
 });
-
-// function endGame() {
-//     if (answerParsed === undefined) {
-//         questionsHeader.text('Thanks For Playing!');
-//         question.text('Score: ' + score);
-//         answers.text('Try again :)');
-//     }
-// }
 
 
 $('.answerButtons').on('click', function () {
@@ -108,33 +100,13 @@ $('.answerButtons').on('click', function () {
         correctIncorrect.show().delay(500);
     }
 
-    if (questionCounter === 9) {
+    if (questionCounter === 10) {
         questionsHeader.text('Thanks For Playing!');
         var timeAccomplished = (100 - countdown);
         question.text('Score: ' + score + '/10 ' + 'Time: ' + timeAccomplished + ' Seconds');
+        timerEl.hide();
         answers.html(`<a href="index.html" alt="Page reload">
         <button class="answerButtons answers">Play Again</button></a>`);
     }
 
-
 });
-
-
-
-
-        // check for end of game (no more question) 
-          // if it is the end of the game, display end of game stuff
-          // add high score (or check hs...)
-        // if its NOT the end of the game
-          // show the next question
-    // else if they get the answer wrong...
-        // check for end of game
-        // increment question counter
-        // display next question
-
-    //}
-
-
-
-
-
