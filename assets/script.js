@@ -13,11 +13,11 @@ var answerOne = $('#answer-1');
 var answerTwo = $('#answer-2');
 var answerThree = $('#answer-3');
 var correctIncorrect = $('#solutions');
-var countdown = 100;
+var countdown = 50;
 var score = 0;
 var questionCounter = 0;
 
-
+// Questions Displayed
 function displayQuestion() {
     question.text(questionArray[questionCounter].questionText);
     questionArray[questionCounter].answers.forEach((answer, i) => {
@@ -25,22 +25,23 @@ function displayQuestion() {
     })
 }
 
+// Questions
 questionArray = [
 
-    { questionText: 'What is JavaScript?', answers: ['A foreign language', 'A DOM', 'A coffee brand', 'A programming language'], correctAnswer: 3 },
-    { questionText: 'What is not a JavaScript Data Type?', answers: ['Object', 'Defined', 'Number', 'String'], correctAnswer: 1 },
-    { questionText: 'Which is not a looping structure in JavaScript?', answers: ['If', 'For', 'While', 'Do-while'], correctAnswer: 0 },
-    { questionText: 'Whats an undefined value in JavaScript?', answers: ['Computable', 'Variable not assigned to a value', 'Property exists', 'A plegmen variable'], correctAnswer: 1 },
+    { questionText: 'What is JavaScript?', answers: ['A script', 'A DOM', 'A coffee bean', 'A programming language'], correctAnswer: 3 },
+    { questionText: 'What isnt a JavaScript Data Type?', answers: ['Object', 'Defined', 'Number', 'String'], correctAnswer: 1 },
+    { questionText: 'Which isnt a looping structure in JavaScript?', answers: ['If', 'For', 'While', 'Do-while'], correctAnswer: 0 },
+    { questionText: 'Whats an undefined value in JavaScript?', answers: ['Computable', 'Unassigned', 'Property', 'A variable'], correctAnswer: 1 },
     { questionText: 'What type of popup boxes are in JavaScript?', answers: ['Red Alert', 'Avid', 'Short', 'Prompt'], correctAnswer: 3 },
-    { questionText: 'Is the data type of variables in Javascript object data types?', answers: ['True', 'False', 'Never', 'Ever'], correctAnswer: 0 },
+    { questionText: 'Are Javascript variables object data types?', answers: ['True', 'False', 'Never', 'Ever'], correctAnswer: 0 },
     { questionText: 'Does JavaScript have concept level scope?', answers: ['Yes', 'No', 'Maybe', 'So'], correctAnswer: 1 },
     { questionText: 'What year did JavaScript make an appearance?', answers: ['1990', '2010', '1970', '1995'], correctAnswer: 3 },
-    { questionText: 'Is Java a nickname for JavaScript?', answers: ['Yes', 'No', 'Sometimes', 'Depends on the case'], correctAnswer: 1 },
+    { questionText: 'Is Java a nickname for JavaScript?', answers: ['Yes', 'No', 'Sometimes', 'Depends'], correctAnswer: 1 },
     { questionText: 'What are JavaScript cookies?', answers: ['Yummy', 'Bugs', 'Large storage files', 'Small test files'], correctAnswer: 3 },
     { questionText: 'End Game', answers: ['Thanks', 'For', 'Playing', 'Friends'] },
 ];
 
-
+// Timer
 function setTimer() {
     var timerTotal = setInterval(function () {
         countdown--;
@@ -48,9 +49,11 @@ function setTimer() {
 
         if (countdown === 0) {
             clearInterval(timerTotal);
+            timerEl.hide();
             questionsHeader.text('Game Over');
-            question.text('Thanks for playing! Try again :)');
-            answers.text('');
+            question.text('Thanks for playing!');
+            answers.html(`<a href="index.html" alt="Page reload">
+        <button class="answerButtons answers">Play Again</button></a>`);
         }
 
         if (questionCounter === 10) {
@@ -60,24 +63,21 @@ function setTimer() {
     }, 1000);
 }
 
+// Hide Begin Card
 function hideButton() {
     startButton.hide();
     quizEl.hide();
     questionDisplayEl.css('display', 'inline');
 }
 
-function displayPlayAgain() {
-    playAgain.css('display', 'block')
-}
-
-
+// Start Game 
 startButton.on('click', () => {
     setTimer();
     hideButton();
     displayQuestion();
 });
 
-
+// Answer Click Events
 $('.answerButtons').on('click', function () {
     var answerSelected = this.id[this.id.length - 1];
     var answerParsed = parseInt(answerSelected);
@@ -89,20 +89,20 @@ $('.answerButtons').on('click', function () {
         questionCounter++;
         displayQuestion();
         correctIncorrect.text('Correct :)');
-        setTimeout(function () { $("#solutions").hide(); }, 1000);
+        setTimeout(function () { $("#solutions").hide(); }, 700);
         correctIncorrect.show().delay(500);
 
     } else {
         questionCounter++;
         displayQuestion();
         correctIncorrect.text('Incorrect');
-        setTimeout(function () { $("#solutions").hide(); }, 1000);
+        setTimeout(function () { $("#solutions").hide(); }, 700);
         correctIncorrect.show().delay(500);
     }
 
     if (questionCounter === 10) {
         questionsHeader.text('Thanks For Playing!');
-        var timeAccomplished = (100 - countdown);
+        var timeAccomplished = (50 - countdown);
         question.text('Score: ' + score + '/10 ' + 'Time: ' + timeAccomplished + ' Seconds');
         timerEl.hide();
         answers.html(`<a href="index.html" alt="Page reload">
