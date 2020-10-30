@@ -52,6 +52,11 @@ function setTimer() {
             question.text('Thanks for playing! Try again :)');
             answers.text('');
         }
+
+        if (questionCounter === 9) {
+            return;
+        }
+
     }, 1000);
 }
 
@@ -92,20 +97,21 @@ $('.answerButtons').on('click', function () {
         questionCounter++;
         displayQuestion();
         correctIncorrect.text('Correct :)');
-        correctIncorrect.show(1).delay(1000).hide(1);
+        setTimeout(function () { $("#solutions").hide(); }, 1000);
+        correctIncorrect.show().delay(500);
 
     } else {
         questionCounter++;
         displayQuestion();
         correctIncorrect.text('Incorrect');
-        correctIncorrect.show(1).delay(1000).hide(1);
+        setTimeout(function () { $("#solutions").hide(); }, 1000);
+        correctIncorrect.show().delay(500);
     }
 
     if (questionCounter === 9) {
         questionsHeader.text('Thanks For Playing!');
         var timeAccomplished = (100 - countdown);
         question.text('Score: ' + score + '/10 ' + 'Time: ' + timeAccomplished + ' Seconds');
-        stopTimer();
         answers.html(`<a href="index.html" alt="Page reload">
         <button class="answerButtons answers">Play Again</button></a>`);
     }
